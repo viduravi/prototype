@@ -16,7 +16,6 @@ public class Singleton {
 
     private Singleton(){
         try {
-            // Example: MySQL connection (adjust for your DB)
             String url = "jdbc:mysql//localhost/student_management";
             String user = "root";
             String password = "root";
