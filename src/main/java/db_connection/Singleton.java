@@ -1,13 +1,18 @@
 package db_connection;
 
+import lombok.Getter;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+@Getter
 
 public class Singleton {
 
     private Singleton dbConSingleton;
     private Connection connection;
+
 
     private Singleton(){
         try {
@@ -29,10 +34,6 @@ public class Singleton {
             return dbConSingleton;
         }
         return dbConSingleton;
-    }
-
-    public Connection getConnection() {
-        return  connection;
     }
 
     public void closeConnection() {
