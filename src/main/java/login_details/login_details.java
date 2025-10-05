@@ -5,7 +5,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class login_details {
     @Getter
-    private static String USERNAME = "admin";
+    private static final String USERNAME = "admin";
     private static String PASSWORD_HASH = BCrypt.hashpw("root", BCrypt.gensalt());
 
     public static boolean checkPassword(String password) {
