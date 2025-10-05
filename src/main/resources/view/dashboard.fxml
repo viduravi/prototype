@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.dashboard_controller"
+            prefWidth="1200" prefHeight="700"
+            style="-fx-background-color: #f4f6f9;">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox spacing="15" style="-fx-background-color: #2c3e50; -fx-padding: 25;">
+            <Label text="🎓  Student Manager"
+                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Separator style="-fx-background-color: #bdc3c7;"/>
+
+            <Button text="🏠  Dashboard" onAction="#goDashboard"
+                    prefWidth="180" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Button text="👨‍🎓  Students" onAction="#goStudents"
+                    prefWidth="180" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Button text="📚  Courses" onAction="#goCourses"
+                    prefWidth="180" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Button text="🕒  Attendance" onAction="#goAttendance"
+                    prefWidth="180" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Button text="⚙️  Settings" onAction="#goSettings"
+                    prefWidth="180" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+            <Pane VBox.vgrow="ALWAYS"/> <!-- pushes logout button to bottom -->
+
+            <Button text="🚪 Logout" onAction="#logoutAction"
+                    prefWidth="180" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </left>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-alignment: CENTER_RIGHT;">
+            <Label text="Welcome, Admin 👋"
+                   style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <ImageView fitWidth="40" fitHeight="40" preserveRatio="true">
+                <ImageView.image>
+                    <Image url="@/images/user_icon.png"/>
+                </ImageView.image>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 30;">
+            <Label text="Welcome to Student Management Dashboard!"
+                   style="-fx-font-size: 22px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+        </StackPane>
+    </center>
+
+</BorderPane>
